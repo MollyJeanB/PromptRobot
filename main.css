@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+.explanation-text {
+  width: 700px;
+  background-color: gray;
+  border: 1px solid black;
+}
+
+.hidden {
+  display: none;
+}
