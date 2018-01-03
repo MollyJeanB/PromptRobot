@@ -2,12 +2,90 @@
   box-sizing: border-box;
 }
 
+body {
+  max-width: 1400px;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;
+}
+
 .explanation-text {
-  width: 700px;
-  background-color: gray;
-  border: 1px solid black;
+  border: 1px solid gray;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
 }
 
 .hidden {
   display: none;
+}
+
+.results {
+  border: 1px solid black;
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 130px;
+  width: 32.75%;
+}
+
+.word {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 150%;
+}
+
+.close {
+  margin-left: 90%;
+  margin-bottom: 5px;
+}
+
+.robot-body {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prompt-form {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prompt-button {
+  width: 30%;
+  height: 50px;
+  margin: 10px 35% 10px 35%;
+}
+
+.returned-content {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gif-box {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gif-itself {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.learn-more-info {
+  text-align: center;
+}
+
+.def-container {
+  height: 110px;
+  width: 95%;
+  padding: 5px;
+
 }
