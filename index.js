@@ -1,6 +1,7 @@
 const GIPHY_SEARCH_URL = 'https://api.giphy.com/v1/gifs/random'
 // const WORDS_SEARCH_URL =
 
+//noun word bank to randomly generate prompt words. Since I need to eventually build a web server to use the Words API (dictionary API with randomizer endpoint) I have for now created word banks by making API calls in Postman and copying the words and definitions into my code.
 const nounBank = [
   {word: 'thiamin', definition:`a B vitamin that prevents beriberi; maintains appetite and growth`},
   {word: 'frown', definition: `a facial expression of dislike or displeasure`},
@@ -15,6 +16,7 @@ const nounBank = [
   {word: 'knot', definition: `soft lump or unevenness in a yarn; either an imperfection or created by design`},
 ]
 
+//verb word bank
 const verbBank = [
   {word: 'shout', definition: `utter a sudden loud cry`},
   {word: 'conk', definition: `pass out from weakness, physical or emotional distress due to a loss of blood supply to the brain`},
@@ -28,6 +30,7 @@ const verbBank = [
   {word: 'bash', definition: `hit hard`},
 ]
 
+//adjective word bank
 const adjBank = [
   {word: 'doddery', definition: `mentally or physically infirm with age`},
   {word: 'svelte', definition: `being of delicate or slender build`},
@@ -41,12 +44,15 @@ const adjBank = [
   {word: 'plucky', definition: `marked by courage and determination in the face of difficulties or danger; robust and uninhibited`},
 ]
 
+//get data for one random GIF from GIPHY API
 function getGifFromApi(callback) {
+  //I wanted to avoid pulling mostly pop culture GIFS and instead prioritize original GIF art and vintage media. To do this, I created a bank of tag words, then sent a random one as a param to the GIPHY API.
   const tagBank = ['art', 'surreal', 'illustration', 'jump', 'broken', 'heart', 'love', 'artist', 'strange', 'sea', 'cloud', 'bird', 'dance', 'vintage', 'history', 'nature', 'abstract', 'animation', 'landscape', 'forest', 'space'];
   const tagWord = getArrayValue(tagBank);
   console.log(tagWord);
   const params = {
 		api_key: 'SuVHVPdadEPH1hDcJXQHV9r3d3aO7yei',
+    //pulls only GIFS rated 'g' on GIPHY. Future version will ideally allow user to toggle g-rated param (and also include a warning that the g-rated setting is not perfect)
     rating: 'g',
     fmt: 'json',
     tag: tagWord,
@@ -67,26 +73,34 @@ function getGifFromApi(callback) {
 //
 // }
 //
+
+//get random string from array
 function getArrayValue(array) {
   return array[Math.floor(Math.random() * array.length)]
 }
 
 function displayPrompt(response) {
+  //removes previous prompt from the DOM
   $('.returned-content').html('');
+  //GIF from API
   const gif = response.data.fixed_height_downsampled_url
   const gifUrl = response.data.url
+  //random noun and definition from nounbank
   const nounObject = getArrayValue(nounBank);
   const noun = nounObject.word;
   const nounDef = nounObject.definition;
+  //random verb and definition from verb bank
   const verbObject = getArrayValue(verbBank);
   const verb = verbObject.word;
   const verbDef = verbObject.definition;
+  //random adjective and definition from adjective bank
   const adjObject = getArrayValue(adjBank);
   const adj = adjObject.word;
   const adjDef = adjObject.definition;
   console.log(noun);
   console.log(verb);
   console.log(adj);
+  //HTML for displaying results
   const resultsHtml = $(
     `<section class="prompt-container">
     <div class="gif-box"><a href="${gifUrl}" target="blank"><img src="${gif}" class="gif-itself" alt="Animated GIF from GIPHY. Click for more information"/></a></div>
@@ -112,10 +126,12 @@ function displayPrompt(response) {
   <section class="learn-more-info">
     <p>Click on a word to see its definition.</p>
   </section>`)
+  //display results
   $('.returned-content').append(resultsHtml);
   console.log(response);
 }
 
+//listens for when user submits 'New Prompt' button
 function listenPromptButton() {
   $('.prompt-form').submit( event => {
     event.preventDefault();
@@ -127,12 +143,14 @@ function listenPromptButton() {
   })
 }
 
+//listen for when user clicks the 'x' button in the info text box and then hides the box
 function listenInfoX() {
   $('.close').on('click', event => {
     $('.explanation-text').addClass('hidden');
   })
 }
 
+//listen for when user clicks on a word box and then shows the definition for that word
 function listenDefine() {
   $('.returned-content').on('click', '.results', event => {
     console.log('clicked', event.currentTarget);
@@ -140,6 +158,7 @@ function listenDefine() {
   })
 }
 
+//calls click handlers
 function handleApp() {
   listenInfoX();
   listenPromptButton();
