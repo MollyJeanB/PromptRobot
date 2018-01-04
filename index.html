@@ -1,37 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <title>Prompt Robot</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="float-grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Lato" rel="stylesheet">
   </head>
   <body>
-    <header role="banner" class="page-header">
-      <!-- <nav>
-        <button>About</button>
-        <button>Exercises</button>
-        <button>Settings</button>
-        <div class="nav-section-text"></div>
-      </nav> -->
+    <header>
       <h1>Prompt Robot</h1>
     </header>
-    <section role="region" class="explanation-text">
-      <p>“Creativity is that marvelous capacity to grasp mutually distinct realities and draw a spark from their juxtaposition.”  -Max Ernst</p>
-      <p>This robot uses the internet's awesome randomness to generate quick-write prompts for writers and writing teachers. Click the button below to see an odd GIF and three words that can serve as the creative seed for your next journal entry, poem, or great Martian novel.</p>
+    <section role="region" class="explanation-text row">
+        <p class="greeting">Hello. I am Prompt Robot. I harness the internet's awesome randomness to generate quick-write prompts for writers and writing teachers. Click my mouth-button to see an odd GIF and three words that can serve as the creative seed for your next journal entry, poem, or great Martian novel.</p>
+        <p class="quote">“Creativity is that marvelous capacity to grasp mutually distinct realities and draw a spark from their juxtaposition.”  -Max Ernst</p>
       <button type="button" class="close" aria-label="Close">  <span aria-hidden="true">&times;</span>
 </button>
     </section>
-    <section role="region" class="robot-body">
-      <form action="#" class="prompt-form">
-        <button type="submit" class="prompt-button">New Prompt</button>
-      </form>
+    <section class="robot-container">
+      <div class="robot-head">
+        <div class="left-eye"></div>
+        <div class="right-eye"></div>
+        <form action="#" class="prompt-form">
+          <button type="submit" class="prompt-button">New Prompt</button>
+        </form>
+      </div>
+      <div class="robot-body">
+        <div class="row">
+          <div class="learn-section">
+            <div class="click-to-learn hidden">
+              Click on a box to learn more about the word
+            </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="gif box"></div>
+          </div>
+          <div class="col-6">
+            <div class="adj box"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="noun box"></div>
+          </div>
+          <div class="col-6">
+            <div class="verb box"></div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section role="region" class="returned-content">
-    </section>
-<script src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
-<script src="index.js"></script>
+    <footer class="author-section">Robot by Molly Jean Bennett, 2018</footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="server.js"></script>
   </body>
 </html>
