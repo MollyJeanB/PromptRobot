@@ -17,7 +17,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-.prompt-button, .robot-body, .author-section, .explanation-text {
+.prompt-button, .robot-body, .author-section, .explanation-text, .about {
   font-family: 'Lato', sans-serif;
 }
 
@@ -29,7 +29,7 @@ h1 {
   border-bottom: 4px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 15px;
   border-top-right-radius: 8%;
   border-top-left-radius: 8%;
 
@@ -147,4 +147,32 @@ h1 {
   font-size: 200%;
   text-align: center;
   color: #303030;
+}
+
+.about {
+  color: #F5F5F5;
+  background: #D75C37;
+  width: 110px;
+  height: 30px;
+  border-radius: 10%;
+  margin-left: 35%
+}
+
+header {
+    max-width: 600px;
+}
+
+@media only screen and (min-width: 572px) {
+
+.about {
+  position: absolute;
+  right: 0;
+}
+
+  header {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }

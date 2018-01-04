@@ -89,6 +89,14 @@ function showClickMessage() {
 function listenInfoX() {
   $('.close').on('click', event => {
     $('.explanation-text').addClass('hidden');
+    $('.about').removeClass('hidden');
+  })
+}
+
+function listenAboutMe() {
+  $('.about').on('click', event => {
+    $('.explanation-text').removeClass('hidden');
+    $('.about').addClass('hidden');
   })
 }
 
@@ -96,6 +104,7 @@ function listenInfoX() {
 function handleApp() {
   listenInfoX();
   listenPromptButton();
+  listenAboutMe();
 }
 
 $(handleApp)
