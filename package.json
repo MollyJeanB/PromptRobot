@@ -4,7 +4,8 @@
   "description": "api capstone node version",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --inspect server.js"
+    "start": "nodemon --inspect server.js",
+    "prod": "node server.js"
   },
   "repository": {
     "type": "git",
