@@ -4,7 +4,7 @@
   "description": "api capstone node version",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --inspect server.js"
   },
   "repository": {
     "type": "git",

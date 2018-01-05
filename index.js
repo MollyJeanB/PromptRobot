@@ -26,7 +26,7 @@ function getNounFromApi(callback){
   const params = {
     partOfSpeech: "noun",
   }
-  $.getJSON(url, params, callback)
+  $.getJSON(url, params, callback);
 
 }
 //
@@ -93,6 +93,7 @@ function listenInfoX() {
   })
 }
 
+//listen for when user clicks 'About Me' button and expand
 function listenAboutMe() {
   $('.about').on('click', event => {
     $('.explanation-text').removeClass('hidden');
