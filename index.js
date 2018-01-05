@@ -3,13 +3,15 @@ const GIPHY_SEARCH_URL = 'https://api.giphy.com/v1/gifs/random'
 //get data for one random GIF from GIPHY API
 function getGifFromApi(callback) {
   //I wanted to avoid pulling mostly pop culture GIFS and instead prioritize original GIF art and vintage media. To do this, I created a bank of tag words, then sent a random one as a param to the GIPHY API.
+const gChecked = $('.onoffswitch-checkbox').prop('checked') ? 'g' : '';
   const tagBank = ['art', 'surreal', 'illustration', 'jump', 'broken', 'heart', 'love', 'artist', 'strange', 'sea', 'cloud', 'bird', 'dance', 'vintage', 'history', 'nature', 'abstract', 'animation', 'landscape', 'forest', 'space'];
   const tagWord = getArrayValue(tagBank);
   console.log(tagWord);
+  console.log(gChecked);
   const params = {
 		api_key: 'SuVHVPdadEPH1hDcJXQHV9r3d3aO7yei',
     //pulls only GIFS rated 'g' on GIPHY
-    rating: 'g',
+    rating: gChecked,
     fmt: 'json',
     tag: tagWord,
 	}
