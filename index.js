@@ -2,15 +2,14 @@ const GIPHY_SEARCH_URL = 'https://api.giphy.com/v1/gifs/random'
 
 //get data for one random GIF from GIPHY API
 function getGifFromApi(callback) {
+  //checks whether g-rated setting is checked or unchecked
+  const gChecked = $('.onoffswitch-checkbox').prop('checked') ? 'g' : '';
   //I wanted to avoid pulling mostly pop culture GIFS and instead prioritize original GIF art and vintage media. To do this, I created a bank of tag words, then sent a random one as a param to the GIPHY API.
-const gChecked = $('.onoffswitch-checkbox').prop('checked') ? 'g' : '';
   const tagBank = ['art', 'surreal', 'illustration', 'jump', 'broken', 'heart', 'love', 'artist', 'strange', 'sea', 'cloud', 'bird', 'dance', 'vintage', 'history', 'nature', 'abstract', 'animation', 'landscape', 'forest', 'space'];
   const tagWord = getArrayValue(tagBank);
-  console.log(tagWord);
-  console.log(gChecked);
   const params = {
 		api_key: 'SuVHVPdadEPH1hDcJXQHV9r3d3aO7yei',
-    //pulls only GIFS rated 'g' on GIPHY
+    //uses either g rating or no rating, depending on user preference
     rating: gChecked,
     fmt: 'json',
     tag: tagWord,
@@ -18,6 +17,8 @@ const gChecked = $('.onoffswitch-checkbox').prop('checked') ? 'g' : '';
 	$.getJSON(GIPHY_SEARCH_URL, params, callback);
 
 }
+
+//get data from Words API for adjective via web server
 function getAdjFromApi(callback) {
   const url = "/words"
   const partOfSpeech = "adjective"
@@ -29,6 +30,7 @@ function getAdjFromApi(callback) {
 
 }
 
+//get data from Words API for noun via web server
 function getNounFromApi(callback){
   const url = "/words"
   const partOfSpeech = "noun"
@@ -39,6 +41,7 @@ function getNounFromApi(callback){
 
 }
 
+//get data from Words API for verb via web server
 function getVerbFromApi(callback) {
   const url = "/words"
   const partOfSpeech = "verb"
@@ -55,6 +58,7 @@ function getArrayValue(array) {
   return array[Math.floor(Math.random() * array.length)]
 }
 
+//capitalze first letter in strings
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -101,7 +105,7 @@ function displayVerb(response) {
 
 }
 
-//listens for when user submits 'New Prompt' button
+//listens for when user submits 'New Prompt' button, then calls all prompt functions
 function listenPromptButton() {
   $('.prompt-form').submit( event => {
     event.preventDefault();
@@ -112,6 +116,7 @@ function listenPromptButton() {
     getVerbFromApi(displayVerb);
   })
 }
+
 
 function showClickMessage() {
   $('.click-to-learn').removeClass('hidden');

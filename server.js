@@ -19,7 +19,7 @@ app.get("/words", (req, res) => {
       partOfSpeech: partOfSpeech,
       lettersMax: 7,
       definition: true,
-      letterPattern: '^((?! ).)*$',
+      letterPattern: `^[a-zA-Z]*$`
     }
   }).then(apiRes => {
     res.send(JSON.stringify(apiRes.data))

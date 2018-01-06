@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Prompt Robot</title>
@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Lato" rel="stylesheet">
   </head>
   <body>
-    <header>
+    <header class="banner">
       <h1>Prompt Robot</h1>
       <p class="quote">“Creativity is that marvelous capacity to grasp mutually distinct realities and draw a spark from their juxtaposition.”  &mdash;Max Ernst</p>
       <button type="button" class="about hidden">About</button>
@@ -21,30 +21,29 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </section>
-    <section class="robot-container">
-      <div class="robot-head">
-        <div class="left-eye"></div>
-        <div class="right-eye"></div>
-        <form action="#" class="prompt-form">
-          <button type="submit" class="prompt-button">New Prompt</button>
-        </form>
-      </div>
-      <div class="robot-body">
-        <div class="row">
-          <div class="settings">
-          <div class="on-off-label">See G-rated GIFS only</div>
-          <div class="onoffswitch">
-            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked> <label class="onoffswitch-label" for="myonoffswitch">
-              <span class="onoffswitch-inner"></span>
-              <span class="onoffswitch-switch"></span>
-            </label>
-          </div>
-          </div>
+    <section role="region" class="robot-head">
+      <div class="left-eye"></div>
+      <div class="right-eye"></div>
+      <form action="#" class="prompt-form">
+        <button type="submit" class="prompt-button">New Prompt</button>
+      </form>
+    </section>
+    <section role="region" class="robot-body" aria-live="assertive">
+      <div class="row">
+        <div class="settings">
+         <div class="on-off-label">See G-rated GIFS only</div>
+         <div class="onoffswitch">
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked> <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+          </label>
+         </div>
+        </div>
         </div>
         <div class="row">
           <div class="learn-section">
             <div class="click-to-learn hidden">
-              Click on a box to learn more
+              Click on a box to get definition
             </div>
         </div>
         </div>
@@ -64,9 +63,8 @@
             <div class="verb box"></div>
           </div>
         </div>
-      </div>
-    </section>
-    <footer class="row">
+      </section>
+    <footer role="contentinfo" class="row">
       <div class="col-6">
         <div class="left-foot"></div>
       </div>
@@ -79,6 +77,5 @@
       integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
       crossorigin="anonymous"></script>
     <script src="index.js"></script>
-    <script src="server.js"></script>
   </body>
 </html>
