@@ -86,7 +86,6 @@ h1 {
 .click-to-learn {
   text-align: center;
   color: #303030;
-  font-size: 102%;
   color: #F5F5F5;
 }
 
@@ -156,6 +155,7 @@ font-size: 0;
 
 .about {
   color: #F5F5F5;
+  font-size: 98%;
   background: #D75C37;
   width: 27%;
   height: 30px;
