@@ -18,10 +18,17 @@ const gChecked = $('.onoffswitch-checkbox').prop('checked') ? 'g' : '';
 	$.getJSON(GIPHY_SEARCH_URL, params, callback);
 
 }
-// function getAdjFromApi(callback) {
-//
-// }
-//
+function getAdjFromApi(callback) {
+  const url = "/words"
+  const partOfSpeech = "adjective"
+  const params = {
+    partOfSpeech: "adjective",
+  }
+
+  $.getJSON(url, params, callback);
+
+}
+
 function getNounFromApi(callback){
   const url = "/words"
   const partOfSpeech = "noun"
@@ -31,15 +38,25 @@ function getNounFromApi(callback){
   $.getJSON(url, params, callback);
 
 }
-//
-// function getVerbFromApi(callback) {
-//
-// }
+
+function getVerbFromApi(callback) {
+  const url = "/words"
+  const partOfSpeech = "verb"
+  const params = {
+    partOfSpeech: "verb",
+  }
+  $.getJSON(url, params, callback);
+
+}
 
 
 //get random string from array
 function getArrayValue(array) {
   return array[Math.floor(Math.random() * array.length)]
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function displayGif(response) {
@@ -54,22 +71,35 @@ function displayGif(response) {
   console.log(response);
 }
 
-// function displayAdj(response) {
-//
-// }
+function displayAdj(response) {
+$('.adj').html('');
+const adjResponse = response.word
+const useAdj = capitalizeFirstLetter(adjResponse);
+const adjResultHtml = $(`<a href="http://www.dictionary.com/browse/${adjResponse}" target="_blank" class="word">${useAdj}</a>`)
+$('.adj').append(adjResultHtml);
+console.log(response);
+
+}
 
 function displayNoun(response) {
   $('.noun').html('');
   const nounResponse = response.word
-  const nounResultHtml = $(`<a href="http://www.dictionary.com/browse/${nounResponse}" target="_blank" class="word">${nounResponse}</a>`)
+  const useNoun = capitalizeFirstLetter(nounResponse);
+  const nounResultHtml = $(`<a href="http://www.dictionary.com/browse/${nounResponse}" target="_blank" class="word">${useNoun}</a>`)
   $('.noun').append(nounResultHtml);
   console.log(response);
 
 }
-//
-// function displayVerb(response) {
-//
-// }
+
+function displayVerb(response) {
+  $('.verb').html('');
+  const verbResponse = response.word
+  const useVerb = capitalizeFirstLetter(verbResponse);
+  const verbResultHtml = $(`<a href="http://www.dictionary.com/browse/${verbResponse}" target="_blank" class="word">${useVerb}</a>`)
+  $('.verb').append(verbResultHtml);
+  console.log(response);
+
+}
 
 //listens for when user submits 'New Prompt' button
 function listenPromptButton() {
@@ -77,9 +107,9 @@ function listenPromptButton() {
     event.preventDefault();
     getGifFromApi(displayGif);
     showClickMessage();
-    // getAdjFromApi(displayAdj);
+    getAdjFromApi(displayAdj);
     getNounFromApi(displayNoun);
-    // getVerbFromApi(displayVerb);
+    getVerbFromApi(displayVerb);
   })
 }
 

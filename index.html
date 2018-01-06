@@ -12,20 +12,14 @@
   <body>
     <header>
       <h1>Prompt Robot</h1>
+      <p class="quote">“Creativity is that marvelous capacity to grasp mutually distinct realities and draw a spark from their juxtaposition.”  &mdash;Max Ernst</p>
       <button type="button" class="about hidden">About Me</button>
     </header>
     <section role="region" class="explanation-text row">
         <p class="greeting">Hello. I am Prompt Robot. I harness the internet's awesome randomness to generate quick-write prompts for writers and writing teachers. Click my mouth-button to see an odd GIF and three words that can serve as the creative seed for your next journal entry, poem, or great Martian novel.</p>
-        <p class="quote">“Creativity is that marvelous capacity to grasp mutually distinct realities and draw a spark from their juxtaposition.”  -Max Ernst</p>
-        <div class="onoffswitch">
-    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-    <label class="onoffswitch-label" for="myonoffswitch">
-        <span class="onoffswitch-inner"></span>
-        <span class="onoffswitch-switch"></span>
-    </label>
-</div>
-      <button type="button" class="close" aria-label="Close">  <span aria-hidden="true">&times;</span>
-</button>
+      <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </section>
     <section class="robot-container">
       <div class="robot-head">
@@ -36,6 +30,17 @@
         </form>
       </div>
       <div class="robot-body">
+        <div class="row">
+          <div class="settings">
+          <div class="on-off-label">See G-rated GIFS only</div>
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked> <label class="onoffswitch-label" for="myonoffswitch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </div>
+          </div>
+        </div>
         <div class="row">
           <div class="learn-section">
             <div class="click-to-learn hidden">
@@ -61,7 +66,15 @@
         </div>
       </div>
     </section>
-    <footer class="author-section">Robot by Molly Jean Bennett, 2018</footer>
+    <footer class="row">
+      <div class="col-6">
+        <div class="left-foot"></div>
+      </div>
+      <div class="col-6">
+        <div class="right-foot"></div>
+      </div>
+      <div class="author-section">Robot by Molly Jean Bennett, 2018</div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.js"
       integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
       crossorigin="anonymous"></script>

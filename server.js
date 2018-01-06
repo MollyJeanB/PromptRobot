@@ -17,7 +17,9 @@ app.get("/words", (req, res) => {
     params: {
       random: true,
       partOfSpeech: partOfSpeech,
-      lettersMax: 7
+      lettersMax: 7,
+      definition: true,
+      letterPattern: '^((?! ).)*$',
     }
   }).then(apiRes => {
     res.send(JSON.stringify(apiRes.data))
