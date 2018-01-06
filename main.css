@@ -87,6 +87,7 @@ h1 {
   text-align: center;
   color: #303030;
   color: #F5F5F5;
+  font-size: 98%;
 }
 
 .learn-section {
@@ -155,9 +156,9 @@ font-size: 0;
 
 .about {
   color: #F5F5F5;
-  font-size: 98%;
+  font-size: 96%;
   background: #D75C37;
-  width: 27%;
+  width: 28%;
   height: 30px;
   border-radius: 10%;
   margin-left: 38%;
