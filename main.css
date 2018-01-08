@@ -16,11 +16,32 @@ h1 {
   margin-bottom: 10px;
 }
 
+header {
+    max-width: 600px;
+}
+
 .prompt-button, .robot-body, .author-section, .explanation-text, .about, .quote {
   font-family: 'Lato', sans-serif;
 }
 
+.quote {
+  margin-top: -3px;
+  font-size: 106%;
+  font-style: italic;
+  color: #303030;
+  text-align: center;
+}
+
+.antenna {
+  width: 10px;
+  height: 35px;
+  background: #677279;
+  border-top: 10px solid #D75C37;
+  margin: 10px auto 0 auto;
+}
+
 .robot-head {
+  position: relative;
   width: 250px;
   height: 122px;
   background: #6991AC;
@@ -28,11 +49,28 @@ h1 {
   border-bottom: 4px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15px;
   border-top-right-radius: 8%;
   border-top-left-radius: 8%;
 
 }
+
+.left-bolt, .right-bolt {
+  display: inline-block;
+  position: absolute;
+  height: 30px;
+  background: #677279;
+  width: 18px;
+  top: 30%;
+}
+
+.left-bolt {
+  left: -8%;
+}
+
+.right-bolt {
+  right: -8%;
+}
+
 
 .left-eye, .right-eye {
   display: inline-block;
@@ -74,7 +112,7 @@ h1 {
 }
 
 .box {
-  height: 220px;
+  height: 150px;
   width: 100%;
   border: 4px solid #677279;
   display: flex;
@@ -122,16 +160,9 @@ h1 {
 }
 
 
-.quote {
-  margin-top: -3px;
-  font-size: 106%;
-  font-style: italic;
-  color: #303030;
-  text-align: center;
-}
-
 .gif {
 font-size: 0;
+height: 220px;
 }
 
 .gif-itself {
@@ -153,18 +184,18 @@ font-size: 0;
   justify-content: center;
 }
 
+.word:hover {
+  background: #ffffba;
+}
+
 .about {
   color: white;
-  background: #D75C37;
+  background: #677279;
   width: 25%;
   height: 30px;
   border-radius: 10%;
   margin-left: 38%;
-  font-size: 102%
-}
-
-header {
-    max-width: 600px;
+  font-size: 102%;
 }
 
 .onoffswitch {
@@ -262,6 +293,10 @@ header {
 }
 
 @media only screen and (min-width: 640px) {
+
+  .box {
+    height: 220px;
+  }
 
 .about {
   position: absolute;
