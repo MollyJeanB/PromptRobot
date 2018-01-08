@@ -26,6 +26,7 @@ On smaller screens and mobile, the content blocks within the robot stack for a s
 ![ScreenShot](https://github.com/MollyJeanB/PromptRobot/blob/master/screenshots/img5_responsiveView.png)
 
 To learn more about the dictionary API used in this project, visit https://www.wordsapi.com/
+
 And for GIPHY's API documentation, see https://developers.giphy.com/
 
 
