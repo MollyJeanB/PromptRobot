@@ -5,10 +5,18 @@ Summary:
 
 ![ScreenShot](https://github.com/MollyJeanB/PromptRobot/blob/master/screenshots/img1_startview.png)
 
+![ScreenShot](https://github.com/MollyJeanB/PromptRobot/blob/master/screenshots/img4_controls.png)
+
+![ScreenShot](https://github.com/MollyJeanB/PromptRobot/blob/master/screenshots/img2_withPrompt.png)
+
+![ScreenShot](https://github.com/MollyJeanB/PromptRobot/blob/master/screenshots/img3_wordHighlighted.png)
+
+![ScreenShot](https://github.com/MollyJeanB/PromptRobot/blob/master/screenshots/img5_responsiveView.png)
 
 
 Use case:
 Why is this app useful?
 
+Surrealist artist Max Ernst wrote that creativity is "that marvelous capacity to grasp mutually distinct realities and draw a spark from their juxtaposition." This app randomizes over large quantities of data to pull combinations
 
 
