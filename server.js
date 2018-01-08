@@ -18,7 +18,9 @@ app.get("/words", (req, res) => {
       random: true,
       partOfSpeech: partOfSpeech,
       lettersMax: 7,
+      //result has definition
       definition: true,
+      //use only letter characters, no special characters or spaces
       letterPattern: `^[a-zA-Z]*$`
     }
   }).then(apiRes => {

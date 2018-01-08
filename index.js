@@ -69,37 +69,47 @@ function displayGif(response) {
   //GIF from API
   const gif = response.data.fixed_height_downsampled_url
   const gifUrl = response.data.url
+  //html to be appended, with link and alt text for GIF. As caption strings are often empty in GIPHY's API data, I opted for a generic message instructing users to get more information on GIPHY
   const gifResultsHtml = $(`<a href="${gifUrl}" target="blank"><img src="${gif}" class="gif-itself" alt="Animated GIF from GIPHY. Click for more information"/></a>`)
-  //display results
+  //display result
   $('.gif').append(gifResultsHtml);
   console.log(response);
 }
 
 function displayAdj(response) {
+  //remove previous word from DOM
 $('.adj').html('');
 const adjResponse = response.word
 const useAdj = capitalizeFirstLetter(adjResponse);
+//html to be appended, with link to dictionary.com to define word
 const adjResultHtml = $(`<a href="http://www.dictionary.com/browse/${adjResponse}" target="_blank" class="word">${useAdj}</a>`)
+//display result
 $('.adj').append(adjResultHtml);
 console.log(response);
 
 }
 
 function displayNoun(response) {
+  //remove previous word from DOM
   $('.noun').html('');
   const nounResponse = response.word
   const useNoun = capitalizeFirstLetter(nounResponse);
+  //html to be appended, with link to dictionary.com to define word
   const nounResultHtml = $(`<a href="http://www.dictionary.com/browse/${nounResponse}" target="_blank" class="word">${useNoun}</a>`)
+  //display result
   $('.noun').append(nounResultHtml);
   console.log(response);
 
 }
 
 function displayVerb(response) {
+  //remove previous word from DOM
   $('.verb').html('');
   const verbResponse = response.word
   const useVerb = capitalizeFirstLetter(verbResponse);
+  //html to be appended, with link to dictionary.com to define word
   const verbResultHtml = $(`<a href="http://www.dictionary.com/browse/${verbResponse}" target="_blank" class="word">${useVerb}</a>`)
+  //display result
   $('.verb').append(verbResultHtml);
   console.log(response);
 
@@ -117,7 +127,7 @@ function listenPromptButton() {
   })
 }
 
-
+//show 'Click on word to define' message 
 function showClickMessage() {
   $('.click-to-learn').removeClass('hidden');
 }
