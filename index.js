@@ -73,7 +73,6 @@ function displayGif(response) {
   const gifResultsHtml = $(`<a href="${gifUrl}" target="blank"><img src="${gif}" class="gif-itself" alt="Animated GIF from GIPHY. Click for more information"/></a>`)
   //display result
   $('.gif').append(gifResultsHtml);
-  console.log(response);
 }
 
 function displayAdj(response) {
@@ -85,8 +84,6 @@ const useAdj = capitalizeFirstLetter(adjResponse);
 const adjResultHtml = $(`<a href="http://www.dictionary.com/browse/${adjResponse}" target="_blank" class="word">${useAdj}</a>`)
 //display result
 $('.adj').append(adjResultHtml);
-console.log(response);
-
 }
 
 function displayNoun(response) {
@@ -98,8 +95,6 @@ function displayNoun(response) {
   const nounResultHtml = $(`<a href="http://www.dictionary.com/browse/${nounResponse}" target="_blank" class="word">${useNoun}</a>`)
   //display result
   $('.noun').append(nounResultHtml);
-  console.log(response);
-
 }
 
 function displayVerb(response) {
@@ -111,8 +106,6 @@ function displayVerb(response) {
   const verbResultHtml = $(`<a href="http://www.dictionary.com/browse/${verbResponse}" target="_blank" class="word">${useVerb}</a>`)
   //display result
   $('.verb').append(verbResultHtml);
-  console.log(response);
-
 }
 
 //listens for when user submits 'New Prompt' button, then calls all prompt functions
@@ -127,7 +120,7 @@ function listenPromptButton() {
   })
 }
 
-//show 'Click on word to define' message 
+//show 'Click on word to define' message
 function showClickMessage() {
   $('.click-to-learn').removeClass('hidden');
 }

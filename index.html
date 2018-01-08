@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Prompt Robot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An eccentric robot that uses the GIPHY API and the Words API to generating writing prompts for writers and creative writing teachers"
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="float-grid.css">
@@ -32,42 +33,41 @@
         <button type="submit" class="prompt-button">New Prompt</button>
       </form>
     </section>
-    <section role="region" class="robot-body" aria-live="assertive" >
+    <section role="region" class="robot-body" aria-live="assertive">
       <div class="row">
         <div class="settings">
-         <div class="on-off-label">See G-rated GIFS only</div>
-         <div class="onoffswitch">
-          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked> <label class="onoffswitch-label" for="myonoffswitch">
-            <span class="onoffswitch-inner"></span>
-            <span class="onoffswitch-switch"></span>
-          </label>
-         </div>
-        </div>
-        </div>
-        <div class="row">
-          <div class="learn-section">
-            <div class="click-to-learn hidden">
-              Click on a word to get definition
-            </div>
-        </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <div class="gif box"></div>
-          </div>
-          <div class="col-6">
-            <div class="adj box"></div>
+          <div class="on-off-label">See G-rated GIFS only</div>
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+            <label class="onoffswitch-label" for="myonoffswitch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
           </div>
         </div>
-        <div class="row">
-          <div class="col-6">
-            <div class="noun box"></div>
-          </div>
-          <div class="col-6">
-            <div class="verb box"></div>
-          </div>
+      </div>
+      <div class="row">
+        <div class="learn-section">
+          <div class="click-to-learn hidden">Click on a word to get definition</div>
         </div>
-      </section>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="gif box"></div>
+        </div>
+        <div class="col-6">
+          <div class="adj box"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="noun box"></div>
+        </div>
+        <div class="col-6">
+          <div class="verb box"></div>
+        </div>
+      </div>
+    </section>
     <footer role="contentinfo" class="row">
       <div class="col-6">
         <div class="left-foot"></div>
