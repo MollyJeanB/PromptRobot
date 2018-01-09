@@ -15,8 +15,6 @@ function getGifFromApi(callback) {
     tag: tagWord,
 	}
 	$.getJSON(GIPHY_SEARCH_URL, params, callback);
-  console.log(gChecked);
-
 }
 
 //get data from Words API for adjective via web server
