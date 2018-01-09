@@ -141,24 +141,12 @@ function listenAboutMe() {
     $('.about').addClass('hidden');
   })
 }
-//
-// function listenCheckbox() {
-//   $('.onoffswitch').on('click', event => {
-//     if ($('.onoffswitch-checkbox').prop('checked') === true) {
-//       $('.onoffswitch-checkbox').prop('unchecked');
-//       }
-//     else {
-//       $('.onoffswitch-checkbox').prop('checked');
-//     }
-//   })
-// }
 
 //calls click handlers
 function handleApp() {
   listenInfoX();
   listenPromptButton();
   listenAboutMe();
-  // listenCheckbox();
 }
 
 $(handleApp)
