@@ -207,7 +207,13 @@ height: 220px;
 }
 
 .onoffswitch-checkbox {
-  display: none;
+  display: inline-block;
+  float: right;
+  position: absolute;
+  bottom: 8px;
+  right: -20px;
+  border: none;
+
 }
 
 .onoffswitch-label {
@@ -248,6 +254,7 @@ height: 220px;
   color: #999999;
   text-align: right;
 }
+
 .onoffswitch-switch {
   display: block;
   width: 18px;
@@ -269,7 +276,8 @@ height: 220px;
 }
 
 .on-off-label {
-  display: inline-block;
+  display: absolute;
+  left: 30px;
   font-size: 105%;
   color: white;
 }
