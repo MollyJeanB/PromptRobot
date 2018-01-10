@@ -24,9 +24,7 @@ function getAdjFromApi(callback) {
   const params = {
     partOfSpeech: "adjective",
   }
-
   $.getJSON(url, params, callback);
-
 }
 
 //get data from Words API for noun via web server
