@@ -3,7 +3,7 @@ Prompt Robot is a web app that uses the GIPHY API and the Words API to generate 
 
 Surrealist artist Max Ernst wrote that creativity is "that marvelous capacity to grasp mutually distinct realities and draw a spark from their juxtaposition." This app randomizes over large quantities of data to pull a GIF and a set of three words that aim to surprise and inspire through such a juxtaposition. While testing a prototype of the app, one high school English teacher said that Prompt Robot would be a visually engaging way to get beginning writers in his classroom interested in starting new projects.
 
-User summary: 
+## User summary: 
 
 When a user opens the app, the robot is empty and intro text below the header explains the app and prompts the user to click the 'New Prompt' button.
 
