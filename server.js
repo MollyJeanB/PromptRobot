@@ -1,13 +1,12 @@
-const express = require('express')
-const app = express()
-const axios = require('axios')
+const express = require("express");
+const app = express();
+const axios = require("axios");
 
-app.use(express.static('.'))
-
+app.use(express.static("public"));
 
 app.get("/words", (req, res) => {
-  const url = "https://wordsapiv1.p.mashape.com/words/"
-  const partOfSpeech = req.query.partOfSpeech
+  const url = "https://wordsapiv1.p.mashape.com/words/";
+  const partOfSpeech = req.query.partOfSpeech;
   axios({
     method: "get",
     url: url,
@@ -24,8 +23,10 @@ app.get("/words", (req, res) => {
       letterPattern: `^[a-zA-Z]*$`
     }
   }).then(apiRes => {
-    res.send(JSON.stringify(apiRes.data))
-  })
-})
+    res.send(JSON.stringify(apiRes.data));
+  });
+});
 
-app.listen(process.env.PORT || 3000, () => console.log('Example app listening on port 3000!'))
+app.listen(process.env.PORT || 3000, () =>
+  console.log("Example app listening on port 3000!")
+);
