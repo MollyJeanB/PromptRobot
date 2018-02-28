@@ -16,7 +16,7 @@
 
 <li>Once the button is clicked, a GIF, an adjective, a noun, and a verb appear in the content boxes. The GIF data is fetched via GIPHY's randomizing endpoint, with a randomized tag word from a bank sent as a parameter. Each word is fetched through a separate API call via a web server. Each call sends a different part of speech as a parameter.</li>
 
-<li>When a user mouses over a word, the box is highlighted. When a user clicks on a word, a separate tab opens with the dictionary.com definition of that word.</li>
+<li>When a user mouses over a word, the box is highlighted. When a user clicks on a word, a separate tab opens with the dictionary.com definition of that word.</li>q
 </ul>
 <h2>API Information</h2>
 
