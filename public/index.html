@@ -7,6 +7,7 @@
     <meta name="description" content="An eccentric robot that uses the GIPHY API and the Words API to generating writing prompts for writers and creative writing teachers"
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <link rel="stylesheet" type="text/css" href="float-grid.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Lato" rel="stylesheet">
      <link rel="shortcut icon" type="image/png" href="/screenshots/robot.png"/>
@@ -19,7 +20,6 @@
     </header>
     <section role="region" class="explanation-text row">
         <p>Hello. I am Prompt Robot. I harness the internet's awesome randomness to generate quick-write prompts for writers and writing teachers. Click the 'New Prompt' button below to see an odd GIF and three words that can serve as the creative seed for your next journal entry, poem, or great Martian novel.</p>
-        <p>PLEASE NOTE: the results may be very strange indeed.</p>
       <button type="button" class="close" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -54,18 +54,118 @@
       </div>
       <div class="row">
         <div class="col-6">
-          <div class="gif box"></div>
+          <div class="gif box">
+          <div class="loading hidden">
+            <div class="lds-css ng-scope">
+              <div class="lds-blocks">
+                <div class="spin box-1">
+                </div>
+                <div class="spin box-2">
+                </div>
+                <div class="spin box-3">
+                </div>
+                <div class="spin box-4">
+                </div>
+                <div class="spin box-5">
+                </div>
+                <div class="spin box-6">
+                </div>
+                <div class="spin box-7">
+                </div>
+                <div class="spin box-8">
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="gif-display full">
+            </div>
+            </div>
         </div>
         <div class="col-6">
-          <div class="adj box"></div>
+          <div class="adj box">
+          <div class="loading hidden">
+            <div class="lds-css ng-scope">
+              <div class="lds-blocks">
+                <div class="spin box-1">
+                </div>
+                <div class="spin box-2">
+                </div>
+                <div class="spin box-3">
+                </div>
+                <div class="spin box-4">
+                </div>
+                <div class="spin box-5">
+                </div>
+                <div class="spin box-6">
+                </div>
+                <div class="spin box-7">
+                </div>
+                <div class="spin box-8">
+                </div>
+              </div>
+              </div>
+            </div>
+          <div class="adj-display full">
+          </div>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-6">
-          <div class="noun box"></div>
+          <div class="noun box">
+          <div class="loading hidden">
+            <div class="lds-css ng-scope">
+              <div class="lds-blocks">
+                <div class="spin box-1">
+                </div>
+                <div class="spin box-2">
+                </div>
+                <div class="spin box-3">
+                </div>
+                <div class="spin box-4">
+                </div>
+                <div class="spin box-5">
+                </div>
+                <div class="spin box-6">
+                </div>
+                <div class="spin box-7">
+                </div>
+                <div class="spin box-8">
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="noun-display full">
+            </div>
+            </div>
         </div>
         <div class="col-6">
-          <div class="verb box"></div>
+          <div class="verb box">
+          <div class="loading hidden">
+            <div class="lds-css ng-scope">
+              <div class="lds-blocks">
+                <div class="spin box-1">
+                </div>
+                <div class="spin box-2">
+                </div>
+                <div class="spin box-3">
+                </div>
+                <div class="spin box-4">
+                </div>
+                <div class="spin box-5">
+                </div>
+                <div class="spin box-6">
+                </div>
+                <div class="spin box-7">
+                </div>
+                <div class="spin box-8">
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="verb-display full">
+            </div>
+            </div>
         </div>
       </div>
     </section>

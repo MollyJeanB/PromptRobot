@@ -1,0 +1,92 @@
+@keyframes lds-blocks {
+  0% {
+    background: #d75c37;
+  }
+  12.5% {
+    background: #d75c37;
+  }
+  12.625% {
+    background: #677279;
+  }
+  100% {
+    background: #677279;
+  }
+}
+@-webkit-keyframes lds-blocks {
+  0% {
+    background: #d75c37;
+  }
+  12.5% {
+    background: #d75c37;
+  }
+  12.625% {
+    background: #677279;
+  }
+  100% {
+    background: #677279;
+  }
+}
+.lds-blocks {
+  position: relative;
+  width: 91px;
+  height: 91px;
+  -webkit-transform: translate(-45.5px, -45.5px) scale(0.455)
+    translate(45.5px, 45.5px);
+  transform: translate(-45.5px, -45.5px) scale(0.455) translate(45.5px, 45.5px);
+}
+.spin {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #677279;
+  -webkit-animation: lds-blocks 1.2s linear infinite;
+  animation: lds-blocks 1.2s linear infinite;
+}
+
+.box-1 {
+  left: 38px;
+  top: 38px;
+  animation-delay: 0s;
+}
+
+.box-2 {
+  left: 80px;
+  top: 38px;
+  animation-delay: 0.15s;
+}
+
+.box-3 {
+  left: 122px;
+  top: 38px;
+  animation-delay: 0.3s;
+}
+
+.box-4 {
+  left: 38px;
+  top: 80px;
+  animation-delay: 1.05s;
+}
+
+.box-5 {
+  left: 122px;
+  top: 80px;
+  animation-delay: 0.44999999999999996s;
+}
+
+.box-6 {
+  left: 38px;
+  top: 122px;
+  animation-delay: 0.8999999999999999s;
+}
+
+.box-7 {
+  left: 80px;
+  top: 122px;
+  animation-delay: 0.75s;
+}
+
+.box-8 {
+  left: 122px;
+  top: 122px;
+  animation-delay: 0.6s;
+}

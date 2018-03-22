@@ -81,7 +81,7 @@ function capitalizeFirstLetter(string) {
 
 function displayGif(response) {
   //removes previous GIF from the DOM
-  $(".gif").html("");
+  hideLoading($(".gif .loading"));
   //GIF from API
   const gif = response.data.fixed_height_downsampled_url;
   const gifUrl = response.data.url;
@@ -90,12 +90,12 @@ function displayGif(response) {
     `<a href="${gifUrl}" target="blank"><img src="${gif}" class="gif-itself" alt="Animated GIF from GIPHY. Click for more information"/></a>`
   );
   //display result
-  $(".gif").append(gifResultsHtml);
+  $(".gif-display").append(gifResultsHtml);
 }
 
 function displayAdj(response) {
   //remove previous word from DOM
-  $(".adj").html("");
+  hideLoading($(".adj .loading"));
   const adjResponse = response.word;
   const useAdj = capitalizeFirstLetter(adjResponse);
   //html to be appended, with link to dictionary.com to define word
@@ -103,12 +103,12 @@ function displayAdj(response) {
     `<a href="http://www.dictionary.com/browse/${adjResponse}" target="_blank" class="word">${useAdj}</a>`
   );
   //display result
-  $(".adj").append(adjResultHtml);
+  $(".adj-display").append(adjResultHtml);
 }
 
 function displayNoun(response) {
   //remove previous word from DOM
-  $(".noun").html("");
+  hideLoading($(".noun .loading"));
   const nounResponse = response.word;
   const useNoun = capitalizeFirstLetter(nounResponse);
   //html to be appended, with link to dictionary.com to define word
@@ -116,12 +116,12 @@ function displayNoun(response) {
     `<a href="http://www.dictionary.com/browse/${nounResponse}" target="_blank" class="word">${useNoun}</a>`
   );
   //display result
-  $(".noun").append(nounResultHtml);
+  $(".noun-display").append(nounResultHtml);
 }
 
 function displayVerb(response) {
   //remove previous word from DOM
-  $(".verb").html("");
+  hideLoading($(".verb .loading"));
   const verbResponse = response.word;
   const useVerb = capitalizeFirstLetter(verbResponse);
   //html to be appended, with link to dictionary.com to define word
@@ -129,12 +129,14 @@ function displayVerb(response) {
     `<a href="http://www.dictionary.com/browse/${verbResponse}" target="_blank" class="word">${useVerb}</a>`
   );
   //display result
-  $(".verb").append(verbResultHtml);
+  $(".verb-display").append(verbResultHtml);
 }
 
 //listens for when user submits 'New Prompt' button, then calls all prompt functions
 function listenPromptButton() {
   $(".prompt-form").submit(event => {
+    hidePromptElements();
+    showLoading();
     event.preventDefault();
     getGifFromApi(displayGif);
     showClickMessage();
@@ -142,6 +144,21 @@ function listenPromptButton() {
     getNounFromApi(displayNoun);
     getVerbFromApi(displayVerb);
   });
+}
+
+function hidePromptElements() {
+  $(".adj-display").html("");
+  $(".noun-display").html("");
+  $(".verb-display").html("");
+  $(".gif-display").html("");
+}
+
+function showLoading() {
+  $(".loading").removeClass("hidden");
+}
+
+function hideLoading($el) {
+  $el.addClass("hidden");
 }
 
 //show 'Click on word to define' message
